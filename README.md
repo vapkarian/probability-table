@@ -1,8 +1,9 @@
-# probability-table
+# Probability table
 Script allows to estimate outcomes of dice rolls. It is useful for board games with complex dices, for example
 [Descent](https://en.wikipedia.org/wiki/Descent:_Journeys_in_the_Dark) or [Doom](https://en.wikipedia.org/wiki/Doom:_The_Boardgame).
 The game features many different dice, while they are all six-sided, they contain a number of symbols (sometimes three on a single face).
 You may want to know probability of all outcomes for many possible cases:
+
 1. Choosing between two pairs/triples of dices.
 2. Probability of X+ damage/range/defense.
 3. Comparing between sets of dices for further usage.
@@ -23,6 +24,7 @@ blue = [
 ]
 
 Rules of printing probability table depend on the rules:
+
 1. First argument is a list of interested parameters. Length of this list should no more than smallest nested list of dice.
 Order of parameters is related to order of parameters on appropriate side. Unnecessary parameters must be replaces by None values.
 2. Positional arguments are any number of dices, filled by rules above.
@@ -31,12 +33,14 @@ Order of parameters is related to order of parameters on appropriate side. Unnec
 Example of usages you can see in [descent.py](descent.py) and [doom.py](doom.py) files.
 
 Examples for Descent contains outcomes:
+
 1. Yellow and blue dices for ranged attack (probability of missing, ranges, damages and surges)
 2. Red and blue dices for melee attack (probability of missing, damages and surges; ranges don't matter)
 3. Brown dice for defense of zombie (probability of defense)
 4. Black and grey dices for test willpower (probability of "no more than" value)
 
 Example for Doom contains outcomes:
+
 1. Red, yellow, two green and two blue dices for BFG (probability of missing, ranges, damages and bullets)
 2. Yellow and blue dices for ranged attack of Imp (probability of missing, ranges and damage; bullets don't matter)
 3. Red and green dices for melee attack of Trite (probability of missing and damage; bullets and ranges don't matter)
