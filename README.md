@@ -14,6 +14,7 @@ Blue, red and yellow dices for Descent are six-side dices, each side may contain
 If at least one side of dice contains some parameter, each nested list must contain it even if appropriate side doesn't contain it (you can use 0 in this case).
 If dice have miss value (X), nested list must be replaced by single None value.
 For example, blue dice from Descent has 6 sides. It must be like:
+```
 blue = [
     None,  # single value for 'X'
     [2, 2, 1],  # '2' numeric value, two hearts, one surge
@@ -22,6 +23,7 @@ blue = [
     [5, 1, 0],  # '5' numeric value, one heart, no surges
     [6, 1, 1],  # '6' numeric value, one heart, one surge
 ]
+```
 
 Rules of printing probability table depend on the rules:
 
@@ -46,7 +48,7 @@ Example for Doom contains outcomes:
 3. Red and green dices for melee attack of Trite (probability of missing and damage; bullets and ranges don't matter)
 
 Example of probability table for yellow and blue dices for Descent:
-
+```
 Miss: 6/36 (16.67%)
 
 Range:
@@ -67,3 +69,4 @@ Damage:
 Surges:
 1+: 21/36 (58.33%)
 2+: 6/36 (16.67%)
+```
