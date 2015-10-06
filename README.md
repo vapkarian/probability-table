@@ -1,6 +1,6 @@
 # probability-table
 Script allows to estimate outcomes of dice rolls. It is useful for board games with complex dices, for example
-[a link](https://en.wikipedia.org/wiki/Descent:_Journeys_in_the_Dark) or [a link](https://en.wikipedia.org/wiki/Doom:_The_Boardgame).
+[Descent](https://en.wikipedia.org/wiki/Descent:_Journeys_in_the_Dark) or [Doom](https://en.wikipedia.org/wiki/Doom:_The_Boardgame).
 The game features many different dice, while they are all six-sided, they contain a number of symbols (sometimes three on a single face).
 You may want to know probability of all outcomes for many possible cases:
 1. Choosing between two pairs/triples of dices.
@@ -8,7 +8,7 @@ You may want to know probability of all outcomes for many possible cases:
 3. Comparing between sets of dices for further usage.
 
 Each dice must to be filled as a list of lists, where nested list is one side of the dice, and its elements must be the values at this side.
-You can review example of dices in two ready pack: [a relative link](descent.py) and [a relative link](doom.py).
+You can review example of dices in two ready pack: [descent.py](descent.py) and [doom.py](doom.py).
 Blue, red and yellow dices for Descent are six-side dices, each side may contains numeric value (range), some count of hearts (damage) and some count of surges (additional amplifications).
 If at least one side of dice contains some parameter, each nested list must contain it even if appropriate side doesn't contain it (you can use 0 in this case).
 If dice have miss value (X), nested list must be replaced by single None value.
@@ -28,7 +28,7 @@ Order of parameters is related to order of parameters on appropriate side. Unnec
 2. Positional arguments are any number of dices, filled by rules above.
 3. Keyword arguments are used for special option: set at_least=False if you want to know probability of "no more than" instead of "at least / no less than".
 
-Example of usages you can see in [a relative link](descent.py) and [a relative link](doom.py) files.
+Example of usages you can see in [descent.py](descent.py) and [doom.py](doom.py) files.
 
 Examples for Descent contains outcomes:
 1. Yellow and blue dices for ranged attack (probability of missing, ranges, damages and surges)
