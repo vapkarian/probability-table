@@ -13,6 +13,7 @@ You can review example of dices in two ready pack: [descent.py](descent.py) and 
 Blue, red and yellow dices for Descent are six-side dices, each side may contains numeric value (range), some count of hearts (damage) and some count of surges (additional amplifications).
 If at least one side of dice contains some parameter, each nested list must contain it even if appropriate side doesn't contain it (you can use 0 in this case).
 If dice have miss value (X), nested list must be replaced by single None value.
+For a better understanding please review the dice charts for [Descent](https://i.imgur.com/5O3Wl.png) and [Doom](http://brainrotcollective.com/images/doom/dice_chart.jpg)
 For example, blue dice from Descent has 6 sides. It must be like:
 ```
 blue = [
