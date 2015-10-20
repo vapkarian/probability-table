@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 from probability_table import print_table
 
 
@@ -11,22 +13,22 @@ grey = [[0], [1], [1], [1], [2], [3]]
 black = [[0], [2], [2], [2], [3], [4]]
 
 if __name__ == '__main__':
-    print 'Yellow + blue:'  # Ranged attack
-    print
+    print('Yellow + blue:')  # Ranged attack
+    print()
     print_table(['Range', 'Damage', 'Surges'], yellow, blue)
-    print '-' * 19
+    print('-' * 19)
 
-    print 'Red + blue:'  # Melee attack
-    print
+    print('Red + blue:')  # Melee attack
+    print()
     print_table([None, 'Damage', 'Surges'], red, blue)  # range doesn't matter
-    print '-' * 19
+    print('-' * 19)
 
-    print 'Brown:'  # Zombie's defense
-    print
+    print('Brown:')  # Zombie's defense
+    print()
     print_table(['Defense'], brown)
-    print '-' * 19
+    print('-' * 19)
 
-    print 'Black + grey:'  # Test willpower
-    print
+    print('Black + grey:')  # Test willpower
+    print()
     print_table(['Attribute test'], black, grey, at_least=False)
-    print '-' * 19
+    print('-' * 19)

@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 from itertools import product
 
 
@@ -17,21 +19,20 @@ def print_table(params, *dices, **options):
     """
     at_least = options.get('at_least', True)
     count = pow(6, len(dices))
-    results = list(product(*dices))
-    results = map(lambda x: map(sum, zip(*x)) if None not in x else None, results)
+    results = [None if None in outcome else [sum(elem) for elem in zip(*outcome)] for outcome in list(product(*dices))]
     if None in results:
-        fails_count = len(filter(lambda x: x is None, results))
-        print 'Miss: {}/{} ({:.2f}%)'.format(fails_count, count, fails_count * 100. / count)
-        print
+        fails_count = len([elem for elem in results if elem is None])
+        print('Miss: {}/{} ({:.2f}%)'.format(fails_count, count, fails_count * 100. / count))
+        print()
     for index, param in enumerate(params):
         if param is None:
             continue
-        print '{}:'.format(param)
+        print('{}:'.format(param))
         max_param = max(elem[index] for elem in results if elem is not None)
         min_param = min(elem[index] for elem in results if elem is not None)
         if at_least:
             min_param = max(1, min_param)
-        for value in xrange(min_param, max_param + 1):
+        for value in range(min_param, max_param + 1):
             if at_least:
                 comparison = lambda x, y: x >= y
                 sign = '+'
@@ -40,5 +41,5 @@ def print_table(params, *dices, **options):
                 sign = '-'
             param_count = len([elem for elem in results if elem is not None and comparison(elem[index], value)])
             param_percent = param_count * 100. / count
-            print '{value}{sign}: {param_count}/{count} ({param_percent:.2f}%)'.format(**locals())
-        print
+            print('{value}{sign}: {param_count}/{count} ({param_percent:.2f}%)'.format(**locals()))
+        print()
